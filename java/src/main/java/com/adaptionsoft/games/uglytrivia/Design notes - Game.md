@@ -1,0 +1,36 @@
+# Design Notes
+Game
+- there must be at least 2 players but no more than 6
+- There are 50 questions for pop, science, sports, and rock
+- Each trivia question is only used once
+- players take turns in order
+- play advances to next player whether right or wrong
+- player wins if their purse contains 6 gold coins
+- purse represents gold coins
+- player gets a gold coin when answering correctly
+- player is put in a penalty box if they answer wrong,
+  - tracked by inPenaltyBox
+  - still keep same place on board
+- places represents the board
+  - 0, 4, 8 are pop
+  - 1, 5, 9 are science
+  - 2, 6, 10 are sports
+  - 3, 7 are rock
+  - 11 is also rock
+  - board wraps back to 0 if you go past 11.
+- Players move the amount rolled, then answer a question for the place they land
+- player misses a turn if they are in the penalty box on an even roll
+- player leaves penalty box on an odd roll and advances to new position on the board
+## Design issues
+- Not handled if you run out of question cards for a category
+- Tracks player state in separate array[6] primitives as well as list
+- Uses LinkedList instead of List/ArrayList
+- Maximum of 6 players?
+- returns notAWinner instead winner making code hard to understand
+- some methods use vars named winner to represent notAWinner
+- isGettingOutOfPenaltyBox tracks only one state but used for all six players
+  - set in roll() but used in wasCorrectlyAnswered
+- "corrent" is misspelled in one place.
+- ## Testing issues
+- outputs to System.out
+- "corrent" is misspelled in one place.
