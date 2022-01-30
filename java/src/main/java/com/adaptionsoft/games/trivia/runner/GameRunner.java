@@ -13,6 +13,14 @@ public class GameRunner {
         runGame(new Random());
     }
 
+    /** Added to support testing with known random seeds
+     * @param seed random seed
+     */
+    public static void runGameWithSeed(long seed) {
+        Random random = new Random(seed);
+        runGame(random);
+    }
+
     private static void runGame(Random rand) {
         Game aGame = new Game();
 
