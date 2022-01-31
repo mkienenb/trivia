@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Game {
+    public static final int NUMBER_OF_TRIVIA_QUESTIONS_PER_CATEGORY = 50;
     ArrayList<String> players = new ArrayList<>();
     int[] places = new int[6];
     int[] purses = new int[6];
@@ -18,7 +19,7 @@ public class Game {
     boolean isGettingOutOfPenaltyBox;
 
     public Game() {
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < NUMBER_OF_TRIVIA_QUESTIONS_PER_CATEGORY; i++) {
             popQuestions.addLast("Pop Question " + i);
             scienceQuestions.addLast(("Science Question " + i));
             sportsQuestions.addLast(("Sports Question " + i));
