@@ -20,9 +20,7 @@ public class GameRunnerApprovalTest {
         @Test
         public void if_random_seed_is_0() throws Exception {
             ByteArrayOutputStream buffer = new ApprovalUtilities().writeSystemOutToStringBuffer();
-
-            GameRunner.main(null);
-
+            GameRunner.runGameWithSeed(0);
             String output = buffer.toString();
             Approvals.verify(output);
         }
