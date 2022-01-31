@@ -19,10 +19,25 @@ public class GameRunnerApprovalTest {
     class A_gameRunner_provides_consistent_output {
         @Test
         public void if_random_seed_is_0() throws Exception {
+            testTemplateForArbitrarySeed(0);
+        }
+
+        @Test
+        public void if_random_seed_is_1() throws Exception {
+            testTemplateForArbitrarySeed(1);
+        }
+
+        @Test
+        public void if_random_seed_is_2() throws Exception {
+            testTemplateForArbitrarySeed(2);
+        }
+
+        private void testTemplateForArbitrarySeed(int seed) {
             ByteArrayOutputStream buffer = new ApprovalUtilities().writeSystemOutToStringBuffer();
             GameRunner gameRunner = new GameRunner();
-            gameRunner.runGameWithSeed(0);
+            gameRunner.runGameWithSeed(seed);
             String output = buffer.toString();
+
             Approvals.verify(output);
         }
     }
