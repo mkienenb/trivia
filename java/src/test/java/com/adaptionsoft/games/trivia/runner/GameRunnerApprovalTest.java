@@ -1,4 +1,4 @@
-package com.adaptionsoft.games.trivia;
+package com.adaptionsoft.games.trivia.runner;
 
 
 import com.adaptionsoft.games.trivia.runner.GameRunner;
