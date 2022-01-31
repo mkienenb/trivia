@@ -10,7 +10,7 @@ public class GameRunner {
     private static boolean notAWinner;
 
     public static void main(String[] args) {
-        runGame(new Random());
+        runGame(new Random(), new Game());
     }
 
     /** Added to support testing with known random seeds
@@ -18,11 +18,10 @@ public class GameRunner {
      */
     public static void runGameWithSeed(long seed) {
         Random random = new Random(seed);
-        runGame(random);
+        runGame(random, new Game());
     }
 
-    private static void runGame(Random rand) {
-        Game aGame = new Game();
+    private static void runGame(Random rand, Game aGame) {
 
         aGame.add("Chet");
         aGame.add("Pat");
