@@ -22,6 +22,7 @@ Game
 - player misses a turn if they are in the penalty box on an even roll
 - player leaves penalty box on an odd roll and advances to new position on the board
 ## Design issues
+- Check for >= 2 players isn't used
 - Not handled if you run out of question cards for a category
 - Tracks player state in separate array[6] primitives as well as list
 - Uses LinkedList instead of List/ArrayList
