@@ -17,8 +17,9 @@ public class GameRunner {
      * @param seed random seed
      */
     public static void runGameWithSeed(long seed) {
+        GameRunner gameRunner = new GameRunner();
         Random random = new Random(seed);
-        new GameRunner().runGame(random, new Game());
+        gameRunner.runGame(random, new Game());
     }
 
     private void runGame(Random rand, Game aGame) {
