@@ -16,10 +16,9 @@ public class GameRunner {
     /** Added to support testing with known random seeds
      * @param seed random seed
      */
-    public static void runGameWithSeed(long seed) {
-        GameRunner gameRunner = new GameRunner();
+    public void runGameWithSeed(long seed) {
         Random random = new Random(seed);
-        gameRunner.runGame(random, new Game());
+        runGame(random, new Game());
     }
 
     private void runGame(Random rand, Game aGame) {
